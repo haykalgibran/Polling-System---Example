@@ -10,7 +10,7 @@
 
 <style>
 body{
-  background: wheat;
+  background: #00FFFF;
   color: black;
   overflow: hidden;
 }

@@ -6,7 +6,7 @@
       </h3>
 
       <div class="emoticons">
-        //ini akan menjadi component vote
+        <Vote />
       </div>
     </section>
     <section class="finish">
@@ -14,6 +14,13 @@
     </section>
   </div>
 </template>
+<script>
+import Vote from "@/components/Vote.vue";
+export default {
+    name: "home",
+    components: {Vote}
+};
+</script>
 <style type="text/css">
   .container{
     display: flex;
@@ -24,4 +31,8 @@
   section{
     width: 100%;
   }
+.emoticons{
+  display: flex;
+  justify-content: center;
+}
 </style>
