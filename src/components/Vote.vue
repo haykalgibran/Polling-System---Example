@@ -17,7 +17,11 @@ import moment from "moment";
 
 export default {
     name: "Vote",
-    components: { },
+    props: { 
+        voteProp:{
+            type : Function
+        }
+    },
     data: function(){
         return {
             emoticons: ['very-bad', 'bad', 'ok', 'good', 'very-good'],
@@ -50,6 +54,8 @@ export default {
 
             
             localStorage.setItem(keyStorage, jsonToString);
+
+            this.voteProp();
 
         }
     },

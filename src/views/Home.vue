@@ -9,10 +9,15 @@
         <Vote :voteProp="vote" />
       </div>
     </section>
+
     <section class="finish">
+
       <transition name="fade" v-on:after-enter="resetVote">
-      <h4>Terima kasih telah memberikan penilaian anda</h4>
+
+      <h4 v-if="show">Terima kasih telah memberikan penilaian anda</h4>
+      
       </transition>
+
     </section>
   </div>
 </template>
@@ -20,6 +25,11 @@
 import Vote from "@/components/Vote.vue";
 export default {
     name: "home",
+    data: function(){
+      return{
+        show: false
+      }
+    },
     components: {Vote},
     methods:{
       vote(){
