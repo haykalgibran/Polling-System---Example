@@ -1,6 +1,6 @@
 <template>
   <div class="buttons">
-      <button v-for="(emoticon,index) in emoticons" :key="index" :id="emoticon" :value="emoticon" class="btn-emoticon" @click="vote">
+      <button v-for="(emoticon,index) in emoticons" :key="index" :id="emoticon" :value="emoticon" class="btn-emoticon" :disabled="isDisable" @click="vote">
 
       </button>
   </div>
@@ -8,15 +8,17 @@
 <script>
 import moment from "moment";
 export default {
-    name: "home",
+    name: "vote",
     components: { },
     data: function(){
         return {
-            emoticons: ['very-bad', 'bad', 'ok', 'good', 'very-good']
+            emoticons: ['very-bad', 'bad', 'ok', 'good', 'very-good'],
+            isDisable: false
         }
     },
     methods:{
         vote(e){
+            this.isDisable = true;
             var voted = e.target.value;
             var keyStorage = moment().format('YYYYMMDDhh:mm:ss');
             var create_at = moment().format('YYYY-MM-DD hh:mm:ss');
