@@ -18,10 +18,22 @@
 import Vote from "@/components/Vote.vue";
 export default {
     name: "home",
-    components: {Vote}
+    components: {Vote},
+    methods:{
+      vote(){
+        this.show = true;
+      }
+    }
 };
 </script>
 <style type="text/css">
+
+  .fade-enter-active, .fade-leave-active{
+    transition: opacity 1s;
+  }
+  .fade-enter, .fade-leave-to{
+    opacity: 0;
+  }
   .container{
     display: flex;
     flex-wrap: wrap;
