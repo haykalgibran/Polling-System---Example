@@ -35,4 +35,13 @@ export default {
   display: flex;
   justify-content: center;
 }
+.finish{
+  position: absolute;
+  bottom: 20px;
+}
+
+.give-your-vote{
+  font-size: 21px;
+}
 </style>
+
