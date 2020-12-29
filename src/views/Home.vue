@@ -6,7 +6,7 @@
       </h3>
 
       <div class="emoticons">
-        <Vote />
+        <Vote :voteProp="vote" />
       </div>
     </section>
     <section class="finish">
@@ -27,7 +27,9 @@ export default {
       },
       resetVote(){
         this.show = false;
-        
+
+        this.$root.$emit('emitProccessDone','aaaa')
+
       }
     }
 };

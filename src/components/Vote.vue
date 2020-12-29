@@ -43,6 +43,8 @@ export default {
 
             
             localStorage.setItem(keyStorage, jsonToString);
+
+            this.voteProp();
         }
     },
     computed:{
@@ -50,7 +52,12 @@ export default {
     return this.emoticonClick.length === 0 ? false : true;
             
      }
-    }     
+    },
+    mounted(){
+        this.$root.$on('emitProccessDone', () => {
+            this.emoticonClick='';
+        });
+    }
 };
 </script>
 
