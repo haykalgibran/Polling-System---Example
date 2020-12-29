@@ -6,6 +6,7 @@
   </div>
 </template>
 <script>
+import moment from "moment";
 export default {
     name: "home",
     components: { },
@@ -17,6 +18,9 @@ export default {
     methods:{
         vote(e){
             var voted = e.target.value;
+
+            var waktu = moment().format('YYYY-MM-DD hh:mm:ss');
+            console.log(waktu);
             
             localStorage.setItem('vote', voted);
         }
