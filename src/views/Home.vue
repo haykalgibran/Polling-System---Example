@@ -10,7 +10,9 @@
       </div>
     </section>
     <section class="finish">
+      <transition name="fade" v-on:after-enter="resetVote">
       <h4>Terima kasih telah memberikan penilaian anda</h4>
+      </transition>
     </section>
   </div>
 </template>
@@ -22,6 +24,10 @@ export default {
     methods:{
       vote(){
         this.show = true;
+      },
+      resetVote(){
+        this.show = false;
+        
       }
     }
 };

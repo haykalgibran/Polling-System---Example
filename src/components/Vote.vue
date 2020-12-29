@@ -14,9 +14,9 @@
 </template>
 <script>
 import moment from "moment";
-import func from '../../vue-temp/vue-editor-bridge';
+
 export default {
-    name: "vote",
+    name: "Vote",
     components: { },
     data: function(){
         return {
@@ -30,7 +30,7 @@ export default {
 
             this.emoticonClick = voted;
            
-            var keyStorage = moment().format('YYYYMMDDhh:mm:ss');
+            var keyStorage = moment().format('YYYYMMDDhhmmss');
             var create_at = moment().format('YYYY-MM-DD hh:mm:ss');
             
 
@@ -46,10 +46,11 @@ export default {
         }
     },
     computed:{
-        isDisable: Function(){
-            return this.emoticonClick.length === 0 ? false : true;
-        }
-    }
+    isDisable: function(){
+    return this.emoticonClick.length === 0 ? false : true;
+            
+     }
+    }     
 };
 </script>
 
