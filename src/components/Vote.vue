@@ -27,16 +27,23 @@ export default {
     methods:{
         vote(e){
             var voted = e.target.value;
-
+            //untuk memnentukan button dengan class active & disabled semua button
             this.emoticonClick = voted;
-           
+            
+            //melakukan penyimpanan data
+            this.store(voted);
+
+            //memberikan indikator ke home components untuk menampilkan terima kasih
+            this.voteProp();
+        },
+        store(voted){
             var keyStorage = moment().format('YYYYMMDDhhmmss');
-            var create_at = moment().format('YYYY-MM-DD hh:mm:ss');
+            var created_at = moment().format('YYYY-MM-DD hh:mm:ss');
             
 
             var data = {
                 vote: voted,
-                create_at: create_at
+                created_at: created_at
             }
 
             var jsonToString = JSON.stringify(data);
@@ -44,7 +51,6 @@ export default {
             
             localStorage.setItem(keyStorage, jsonToString);
 
-            this.voteProp();
         }
     },
     computed:{
