@@ -1,4 +1,4 @@
-# voting
+# Polling-System
 
 ## Project setup
 ```
