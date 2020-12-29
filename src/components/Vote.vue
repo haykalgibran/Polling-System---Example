@@ -18,11 +18,19 @@ export default {
     methods:{
         vote(e){
             var voted = e.target.value;
-
-            var waktu = moment().format('YYYY-MM-DD hh:mm:ss');
-            console.log(waktu);
+            var keyStorage = moment().format('YYYYMMDDhh:mm:ss');
+            var create_at = moment().format('YYYY-MM-DD hh:mm:ss');
             
-            localStorage.setItem('vote', voted);
+
+            var data = {
+                vote: voted,
+                create_at: create_at
+            }
+
+            var jsonToString = JSON.stringify(data);
+
+            
+            localStorage.setItem(keyStorage, jsonToString);
         }
     }
 };
